@@ -1,0 +1,20 @@
+# Android build output
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# App build output
+app/build/
+
+# Gradle wrapper binary (optional – keep the jar if you want reproducible builds)
+gradle/wrapper/gradle-wrapper.jar
+
+# API keys – NEVER commit your actual keys
+# If you use local.properties for secrets, make sure it stays here
