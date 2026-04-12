@@ -2,7 +2,7 @@
 <resources>
     <!-- Base application theme -->
     <style name="Theme.WeatherApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Colour scheme -->
+        <!-- Color scheme -->
         <item name="colorPrimary">@color/accent</item>
         <item name="colorPrimaryVariant">@color/bg_default_start</item>
         <item name="colorOnPrimary">@color/white</item>
