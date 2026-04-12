@@ -1,15 +1,6 @@
-import java.util.Properties
-
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-}
-
-// Read local.properties so the API key never has to live in source control.
-def localProps = new Properties()
-def localPropsFile = rootProject.file("local.properties")
-if (localPropsFile.exists()) {
-    localProps.load(new FileInputStream(localPropsFile))
 }
 
 android {
@@ -25,11 +16,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        // API key is read from local.properties (which is git-ignored).
-        // To set it up: add  WEATHER_API_KEY=your_key_here  to local.properties
-        // in the project root (same folder as settings.gradle).
-        buildConfigField "String", "WEATHER_API_KEY",
-            "\"${localProps.getProperty('WEATHER_API_KEY', 'YOUR_API_KEY_HERE')}\""
+        buildConfigField "String", "WEATHER_API_KEY", "\"a9799cd1d17964e35248a8958217e618\""
     }
 
     buildFeatures {
