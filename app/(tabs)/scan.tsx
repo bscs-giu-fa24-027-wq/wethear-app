@@ -56,7 +56,7 @@ export default function ScanScreen() {
     if (!result.canceled && result.assets.length > 0) {
       const newPages: ScannedPage[] = result.assets.map((asset) => ({
         uri: asset.uri,
-        id: Date.now().toString() + Math.random(),
+        id: `${Date.now()}-${Math.random()}`,
       }));
       setScannedPages((prev) => [...prev, ...newPages]);
     }
@@ -78,7 +78,7 @@ export default function ScanScreen() {
     }
     Alert.alert(
       'Save Document',
-      'Document scan saved! In a production app, these images would be converted to PDF using a library like react-native-html-to-pdf or a backend service.',
+      `${scannedPages.length} page(s) captured. Note: actual PDF conversion requires a backend service or react-native-html-to-pdf. This is a UI placeholder.`,
       [{ text: 'OK', onPress: () => setScannedPages([]) }]
     );
   };

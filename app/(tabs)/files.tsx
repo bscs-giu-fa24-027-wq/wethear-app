@@ -28,7 +28,7 @@ function formatSize(bytes: number): string {
 }
 
 function formatDate(timestamp: number): string {
-  return new Date(timestamp * 1000).toLocaleDateString('en-US', {
+  return new Date(timestamp).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
@@ -63,8 +63,9 @@ export default function FilesScreen() {
           return {
             name,
             uri: DOCS_DIR + name,
-            size: (info as any).size || 0,
-            modifiedAt: (info as any).modificationTime || Date.now() / 1000,
+            size: info.exists ? info.size : 0,
+            // modificationTime is in seconds; multiply to milliseconds for consistency
+            modifiedAt: info.exists ? info.modificationTime * 1000 : Date.now(),
           };
         })
       );

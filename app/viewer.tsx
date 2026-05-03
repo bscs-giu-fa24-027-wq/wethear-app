@@ -23,15 +23,15 @@ export default function ViewerScreen() {
   const [loading, setLoading] = useState(true);
   const [scale, setScale] = useState(1.0);
 
-  const sharePDF = async () => {
-    try {
-      await Share.share({ url: uri as string, title: name as string });
-    } catch {
-      Alert.alert('Error', 'Failed to share this file.');
-    }
-  };
-
   React.useEffect(() => {
+    const sharePDF = async () => {
+      try {
+        await Share.share({ url: uri as string, title: name as string });
+      } catch {
+        Alert.alert('Error', 'Failed to share this file.');
+      }
+    };
+
     navigation.setOptions({
       title: name || 'PDF Viewer',
       headerRight: () => (
@@ -40,7 +40,7 @@ export default function ViewerScreen() {
         </TouchableOpacity>
       ),
     });
-  }, [name]);
+  }, [navigation, name, uri]);
 
   const source = { uri: uri as string, cache: true };
 

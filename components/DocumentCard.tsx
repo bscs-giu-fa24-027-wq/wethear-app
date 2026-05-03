@@ -22,7 +22,7 @@ function formatSize(bytes: number): string {
 }
 
 function formatDate(timestamp: number): string {
-  const d = new Date(timestamp * 1000);
+  const d = new Date(timestamp);
   return d.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'short',

@@ -43,8 +43,9 @@ export default function DocumentsScreen() {
           return {
             name,
             uri: DOCS_DIR + name,
-            size: (info as any).size || 0,
-            modifiedAt: (info as any).modificationTime || Date.now(),
+            size: info.exists ? info.size : 0,
+            // modificationTime is in seconds; multiply to milliseconds
+            modifiedAt: info.exists ? info.modificationTime * 1000 : Date.now(),
           };
         })
       );
