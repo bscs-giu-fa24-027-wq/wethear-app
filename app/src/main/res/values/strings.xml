@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weather App</string>
+
+    <!-- Search bar -->
+    <string name="hint_city_name">Enter city name…</string>
+    <string name="btn_search">Search</string>
+    <string name="btn_location_description">Use current location</string>
+
+    <!-- Weather card labels -->
+    <string name="weather_icon_description">Weather condition icon</string>
+    <string name="feels_like_template">Feels like %1$d°C</string>
+    <string name="humidity_template">Humidity: %1$d%%</string>
+    <string name="wind_template">Wind: %1$.1f m/s</string>
+    <string name="pressure_template">Pressure: %1$d hPa</string>
+
+    <!-- Forecast section -->
+    <string name="label_5_day_forecast">5-Day Forecast</string>
+
+    <!-- Detail icons accessibility labels -->
+    <string name="humidity_description">Humidity icon</string>
+    <string name="wind_description">Wind speed icon</string>
+    <string name="pressure_description">Pressure icon</string>
+
+    <!-- Location permission messages -->
+    <string name="location_rationale">Location access is needed to show weather for your current position.</string>
+    <string name="location_permission_denied">Location permission denied. Please search by city name.</string>
+    <string name="location_unavailable">Unable to get your location. Please try again.</string>
+    <string name="location_error">Failed to fetch location. Please search by city name.</string>
+</resources>

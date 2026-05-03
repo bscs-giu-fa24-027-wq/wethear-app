@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder cloud icon shown while weather icons are loading from the CDN -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#AAFFFFFF"
+        android:pathData="M6.76,4.84L5.35,3.43C3.29,5.07 2,7.52 2,10h2C4,8.02 5.15,6.31 6.76,4.84z
+                          M17.24,4.84C18.85,6.31 20,8.02 20,10h2C22,7.52 20.71,5.07 18.66,3.43L17.24,4.84z
+                          M18,10.5C18,7.17 15.64,4.39 12.5,3.68V3c0-0.83-0.67-1.5-1.5-1.5S9.5,2.17 9.5,3v0.68
+                          C6.36,4.39 4,7.17 4,10.5V16l-2,2v1h20v-1l-2-2V10.5z
+                          M12,23c1.1,0 2-0.9 2-2h-4C10,22.1 10.9,23 12,23z" />
+</vector>

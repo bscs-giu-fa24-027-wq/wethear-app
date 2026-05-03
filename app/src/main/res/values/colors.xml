@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary palette -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+
+    <!-- Accent – vibrant blue used for buttons and outlines -->
+    <color name="accent">#FF3B82F6</color>
+
+    <!-- Card overlay (semi-transparent white/dark to overlay gradients) -->
+    <color name="card_background">#55FFFFFF</color>
+
+    <!-- Input field background -->
+    <color name="input_background">#33FFFFFF</color>
+
+    <!-- Hint / secondary text -->
+    <color name="hint_color">#AAFFFFFF</color>
+    <color name="sub_text">#CCFFFFFF</color>
+
+    <!-- Divider line inside cards -->
+    <color name="divider">#33FFFFFF</color>
+
+    <!-- Condition-specific background colours (fallbacks if drawables are not available) -->
+    <color name="bg_clear_start">#FF1E90FF</color>
+    <color name="bg_clear_end">#FF87CEEB</color>
+
+    <color name="bg_cloudy_start">#FF607D8B</color>
+    <color name="bg_cloudy_end">#FF90A4AE</color>
+
+    <color name="bg_rain_start">#FF1A237E</color>
+    <color name="bg_rain_end">#FF42A5F5</color>
+
+    <color name="bg_snow_start">#FFB0BEC5</color>
+    <color name="bg_snow_end">#FFFFFFFF</color>
+
+    <color name="bg_thunder_start">#FF37474F</color>
+    <color name="bg_thunder_end">#FF263238</color>
+
+    <color name="bg_default_start">#FF0D47A1</color>
+    <color name="bg_default_end">#FF42A5F5</color>
+</resources>

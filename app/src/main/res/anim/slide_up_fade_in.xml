@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  slide_up_fade_in.xml
+  Animation applied to the weather card when it first appears.
+  The card slides up 40dp and fades from 0 → 1 opacity over 400 ms.
+-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/decelerate_interpolator">
+
+    <translate
+        android:fromYDelta="40dp"
+        android:toYDelta="0"
+        android:duration="400" />
+
+    <alpha
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0"
+        android:duration="400" />
+
+</set>

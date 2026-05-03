@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Thunderstorm background gradient (dark grey) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:startColor="@color/bg_thunder_start"
+        android:endColor="@color/bg_thunder_end"
+        android:angle="135"
+        android:type="linear" />
+</shape>
