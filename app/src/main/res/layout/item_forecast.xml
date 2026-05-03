@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  item_forecast.xml – A single slot in the horizontal 5-day forecast list.
+  Shows: day/time label | weather icon | temperature
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="12dp"
+    android:layout_marginEnd="8dp"
+    android:minWidth="76dp"
+    android:background="@drawable/bg_forecast_item">
+
+    <!-- "Mon 15:00" -->
+    <TextView
+        android:id="@+id/tvForecastDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/sub_text"
+        android:textSize="11sp"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="0.04"
+        tools:text="Mon 12:00" />
+
+    <!-- Weather icon -->
+    <ImageView
+        android:id="@+id/ivForecastIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:contentDescription="@string/weather_icon_description"
+        tools:src="@drawable/ic_cloud_placeholder" />
+
+    <!-- Temperature -->
+    <TextView
+        android:id="@+id/tvForecastTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        tools:text="18°C" />
+
+</LinearLayout>

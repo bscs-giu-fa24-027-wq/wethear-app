@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cloudy background gradient (grey tones) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:startColor="@color/bg_cloudy_start"
+        android:endColor="@color/bg_cloudy_end"
+        android:angle="135"
+        android:type="linear" />
+</shape>
