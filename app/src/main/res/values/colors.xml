@@ -8,17 +8,26 @@
     <color name="accent">#FF3B82F6</color>
 
     <!-- Card overlay (semi-transparent white/dark to overlay gradients) -->
-    <color name="card_background">#55FFFFFF</color>
+    <color name="card_background">#40FFFFFF</color>
+
+    <!-- Card border stroke -->
+    <color name="card_stroke">#38FFFFFF</color>
 
     <!-- Input field background -->
-    <color name="input_background">#33FFFFFF</color>
+    <color name="input_background">#28FFFFFF</color>
+
+    <!-- Search bar background -->
+    <color name="search_background">#28FFFFFF</color>
 
     <!-- Hint / secondary text -->
     <color name="hint_color">#AAFFFFFF</color>
     <color name="sub_text">#CCFFFFFF</color>
 
     <!-- Divider line inside cards -->
-    <color name="divider">#33FFFFFF</color>
+    <color name="divider">#30FFFFFF</color>
+
+    <!-- Detail chip background -->
+    <color name="chip_background">#22FFFFFF</color>
 
     <!-- Condition-specific background colours (fallbacks if drawables are not available) -->
     <color name="bg_clear_start">#FF1E90FF</color>

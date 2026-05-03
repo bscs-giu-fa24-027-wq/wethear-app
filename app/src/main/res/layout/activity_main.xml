@@ -5,6 +5,7 @@
   Structure:
     ScrollView
       LinearLayout (root)
+        ┣━ Header (title + tagline)
         ┣━ Search bar (TextInputLayout + Button row)
         ┣━ Loading indicator (ProgressBar)
         ┣━ Error TextView
@@ -26,37 +27,64 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bg_default"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="32dp">
 
-        <!-- ── App title ─────────────────────────────────────────── -->
-        <TextView
+        <!-- ── Header: App title + tagline ──────────────────────── -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/app_name"
-            android:textColor="@color/white"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-condensed" />
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.04" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/app_tagline"
+                android:textColor="@color/sub_text"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif"
+                android:letterSpacing="0.08" />
+
+        </LinearLayout>
 
         <!-- ── Search row ────────────────────────────────────────── -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="20dp"
             android:gravity="center_vertical">
 
-            <!-- City name input -->
+            <!-- City name input – pill-shaped corners -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="@string/hint_city_name"
-                app:boxBackgroundColor="@color/input_background"
-                app:boxStrokeColor="@color/accent"
+                app:boxBackgroundColor="@color/search_background"
+                app:boxStrokeColor="@color/hint_color"
+                app:boxStrokeWidthFocused="1.5dp"
+                app:boxCornerRadiusTopStart="28dp"
+                app:boxCornerRadiusTopEnd="28dp"
+                app:boxCornerRadiusBottomStart="28dp"
+                app:boxCornerRadiusBottomEnd="28dp"
+                app:hintTextColor="@color/hint_color"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -68,24 +96,27 @@
                     android:singleLine="true"
                     android:textColor="@color/white"
                     android:textColorHint="@color/hint_color"
+                    android:fontFamily="sans-serif"
                     tools:text="London" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Search button -->
+            <!-- Search button – pill shaped -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSearch"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
                 android:text="@string/btn_search"
                 android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="14sp"
                 app:backgroundTint="@color/accent"
-                app:cornerRadius="8dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
+                app:cornerRadius="24dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp" />
 
-            <!-- GPS / location button -->
+            <!-- GPS / location button – circular pill -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLocation"
                 android:layout_width="48dp"
@@ -93,7 +124,7 @@
                 android:layout_marginStart="8dp"
                 android:contentDescription="@string/btn_location_description"
                 app:backgroundTint="@color/accent"
-                app:cornerRadius="8dp"
+                app:cornerRadius="24dp"
                 app:icon="@drawable/ic_location"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
@@ -121,9 +152,10 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/bg_error"
             android:gravity="center"
-            android:padding="12dp"
+            android:padding="14dp"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif"
             android:visibility="gone"
             tools:text="City not found. Please check the spelling."
             tools:visibility="visible" />
@@ -135,8 +167,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="8dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="12dp"
             android:visibility="gone"
             tools:visibility="visible">
 
@@ -144,7 +176,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="24dp">
 
                 <!-- City name + country -->
                 <TextView
@@ -153,8 +185,10 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/white"
-                    android:textSize="22sp"
+                    android:textSize="24sp"
                     android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.02"
                     tools:text="London, GB" />
 
                 <!-- Icon + temperature (horizontal pair) -->
@@ -168,8 +202,8 @@
 
                     <ImageView
                         android:id="@+id/ivWeatherIcon"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
                         android:contentDescription="@string/weather_icon_description"
                         tools:src="@drawable/ic_cloud_placeholder" />
 
@@ -178,8 +212,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"
-                        android:textSize="64sp"
+                        android:textSize="72sp"
                         android:textStyle="bold"
+                        android:fontFamily="sans-serif-light"
                         tools:text="18°C" />
 
                 </LinearLayout>
@@ -192,6 +227,8 @@
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/white"
                     android:textSize="18sp"
+                    android:fontFamily="sans-serif"
+                    android:letterSpacing="0.03"
                     tools:text="Broken clouds" />
 
                 <!-- Feels like -->
@@ -200,37 +237,41 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="6dp"
                     android:textColor="@color/sub_text"
                     android:textSize="14sp"
+                    android:fontFamily="sans-serif"
                     tools:text="Feels like 15°C" />
 
                 <!-- Divider -->
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="16dp"
                     android:background="@color/divider" />
 
-                <!-- Extra details: humidity / wind / pressure -->
+                <!-- Extra details: humidity / wind / pressure – chip style -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="space_evenly">
+                    android:gravity="center">
 
-                    <!-- Humidity -->
+                    <!-- Humidity chip -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
                         android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:background="@drawable/bg_detail_chip">
 
                         <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:src="@drawable/ic_humidity"
                             android:contentDescription="@string/humidity_description" />
 
@@ -238,23 +279,30 @@
                             android:id="@+id/tvHumidity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
                             android:textColor="@color/white"
-                            android:textSize="13sp"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
                             tools:text="Humidity: 72%" />
 
                     </LinearLayout>
 
-                    <!-- Wind speed -->
+                    <!-- Wind speed chip -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="6dp"
                         android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:background="@drawable/bg_detail_chip">
 
                         <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:src="@drawable/ic_wind"
                             android:contentDescription="@string/wind_description" />
 
@@ -262,23 +310,29 @@
                             android:id="@+id/tvWindSpeed"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
                             android:textColor="@color/white"
-                            android:textSize="13sp"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
                             tools:text="Wind: 5.2 m/s" />
 
                     </LinearLayout>
 
-                    <!-- Pressure -->
+                    <!-- Pressure chip -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:layout_marginStart="6dp"
                         android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:background="@drawable/bg_detail_chip">
 
                         <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:src="@drawable/ic_pressure"
                             android:contentDescription="@string/pressure_description" />
 
@@ -286,8 +340,11 @@
                             android:id="@+id/tvPressure"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
                             android:textColor="@color/white"
-                            android:textSize="13sp"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
                             tools:text="Pressure: 1013 hPa" />
 
                     </LinearLayout>
@@ -304,10 +361,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="24dp"
             app:cardBackgroundColor="@color/card_background"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="8dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="12dp"
             android:visibility="gone"
             tools:visibility="visible">
 
@@ -315,15 +371,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/label_5_day_forecast"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.04"
                     android:layout_marginBottom="12dp" />
 
                 <androidx.recyclerview.widget.RecyclerView

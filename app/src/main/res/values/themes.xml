@@ -9,8 +9,12 @@
         <item name="colorSecondary">@color/accent</item>
         <item name="colorOnSecondary">@color/white</item>
 
-        <!-- Status bar -->
-        <item name="android:statusBarColor">@color/bg_default_start</item>
+        <!-- Status bar – transparent so gradient shows through -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <!-- Default font family for the whole app -->
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 </resources>
