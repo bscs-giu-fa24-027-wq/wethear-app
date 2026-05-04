@@ -8,14 +8,11 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
+    "platforms": ["android"],
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#0f0f1a"
-    },
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.wethear.pdfviewer"
     },
     "android": {
       "adaptiveIcon": {
@@ -24,11 +21,12 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.wethear.pdfviewer"
-    },
-    "web": {
-      "bundler": "metro",
-      "favicon": "./assets/favicon.png"
+      "package": "com.wethear.pdfviewer",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "plugins": [
       "expo-router",
